@@ -13,5 +13,28 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <div id="title">Akan Name Generator</div>
+    <div class="description">
+      Akan names are derived from Ghanian culture. Frequently in Ghana, children
+      are given their first name as a 'day name' which corresponds to the day in
+      the week they were born. Here are Ghanian day names.
+    </div>
+    <div class="description">
+      Input your birthday and gender below to find out what your Akan name is.
+    </div>
+    <input type="date" name="birthday" id="birthday" />
+    <fieldset>
+      <legend>Please select your gender:</legend>
+      <div>
+        <input type="radio" name="gender" id="male" value="Male" />
+        <label for="male">Male</label>
+      </div>
+      <div>
+        <input type="radio" name="gender" id="female" value="Female" />
+        <label for="female">Female</label>
+      </div>
+    </fieldset>
+    <div id="akan"></div>
+  </body>
 </html>
