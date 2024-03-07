@@ -1,0 +1,61 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: "Roboto Slab";
+}
+
+body {
+  display: flex;
+  background-color: cadetblue;
+  color: white;
+  flex-direction: column;
+  font-size: large;
+}
+
+#main {
+  margin: 4em;
+}
+
+div {
+  margin-bottom: 1em;
+}
+
+#title {
+  font-size: 4em;
+  text-align: center;
+}
+
+#birthday {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  font-size: large;
+  color: #333;
+  outline: none;
+  margin-bottom: 1em;
+}
+
+#birthday:focus {
+  border-color: #0066ff;
+  box-shadow: 0 0 5px rgba(0, 102, 255, 0.5);
+}
+
+#birthday-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+fieldset {
+  margin-bottom: 1em;
+}
+
+#akan {
+  text-align: center;
+  font-size: 3em;
+  color: cornsilk;
+}
