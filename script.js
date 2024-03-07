@@ -3,33 +3,20 @@ var akan_names = {
   Male: ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"],
   Female: ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"],
 };
+var birthdayInput = document.getElementById("birthday");
 
-// add event listeners to the radio buttons
+// add change listeners to the radio buttons
 document
   .querySelectorAll('input[type="radio"][name="gender"]')
   .forEach(function (radio) {
     radio.addEventListener("change", function (e) {
-      var selectedGender = e.target.value;
-
-      var chosenDate = document.getElementById("birthday").value;
-
-      if (chosenDate !== null) {
-        document.getElementById("akan").textContent =
-          akan_names[selectedGender][getWeekday(chosenDate)];
-      }
+      setAkanName(e.target.value, birthdayInput.value);
     });
   });
 
-document.getElementById("birthday").addEventListener("change", function () {
-  weekday = getWeekday(this.value);
-
-  // Get selected Gender
-  var selectedGender = getSelectedGender();
-
-  if (selectedGender !== "None") {
-    document.getElementById("akan").textContent =
-      akan_names[selectedGender][weekday];
-  }
+// add change listener to date input
+birthdayInput.addEventListener("change", function () {
+  setAkanName(getSelectedGender(), this.value);
 });
 
 // Returns selected gender from radio as "Male", "Female" or "None"
@@ -38,7 +25,7 @@ function getSelectedGender() {
   if (selectedGender !== null) {
     return selectedGender.value;
   } else {
-    return "None";
+    return null;
   }
 }
 
@@ -53,4 +40,12 @@ function getWeekday(dateString) {
   return parseInt(
     (CC / 4 - 2 * CC - 1 + (5 * YY) / 4 + (26 * (MM + 1)) / 10 + DD) % 7
   );
+}
+
+// set Akan name
+function setAkanName(gender, day) {
+  if (gender !== null && day !== null && day !== "") {
+    document.getElementById("akan").textContent =
+      akan_names[gender][getWeekday(day)];
+  }
 }
